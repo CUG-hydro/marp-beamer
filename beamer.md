@@ -1,4 +1,5 @@
 ---
+marp: true
 theme: nordic-beamer
 paginate: true
 header: 'Header space'
