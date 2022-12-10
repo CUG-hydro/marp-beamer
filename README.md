@@ -1,4 +1,4 @@
-# marp-theme-nordic-beamer
+# marp-beamer
 
 [Marp](https://marp.app/) theme, with [Beamer](https://ctan.org/pkg/beamer)-like components, and [Nord](https://www.nordtheme.com/)-like color scheme.
 
@@ -12,12 +12,15 @@ npx browserslist@latest --update-db
 ```
 
 ```bash
-git clone https://github.com/n-ari/marp-theme-nordic-beamer
-cd marp-theme-nordic-beamer
+git clone https://github.com/CUG-hydro/marp-beamer
+cd marp-beamer
 yarn
-npx @marp-team/marp-cli --server ./slides
+# npx @marp-team/marp-cli --server ./slides
 ```
 
 ## Example
 
-See `slides/demo/index.md`, or [built demo slide on GitHub pages](https://n-ari.github.io/marp-theme-nordic-beamer/demo/).
+| Type | 源文件 |渲染结果 |
+| ---- |------- | ------ |
+| 低级语法 | [low_level.md](./examples/low_level.md)   | [low_level.html](https://cug-hydro.github.io/marp-beamer/pages/beamer_low.html) |
+| 高级语法 | [high_level.md](./examples/high_level.md) | [high_level.html](https://cug-hydro.github.io/marp-beamer/pages/beamer_high.html)|
