@@ -1,0 +1,185 @@
+/* @theme nordic-beamer */
+
+:root {
+    /* // Polar Night */
+  --nord0: #2E3440;
+  --nord1: #3B4252;
+  --nord2: #434C5E;
+  --nord3: #4C566A;
+  /* // Aurora */
+  --nord4: #D8DEE9;
+  --nord5: #E5E9F0;
+  --nord6: #ECEFF4;
+  --nord7: #8FBCBB;
+  /* // Frost */
+  --nord8: #88C0D0;
+  --nord9: #81A1C1;
+  --nord10: #5E81AC;
+  --nord11: #BF616A;
+  /* // Snow Storm */
+  --nord12: #D08770;
+  --nord13: #EBCB8B;
+  --nord14: #A3BE8C;
+  --nord15: #B48EAD;
+}
+
+
+
+
+/* header, footer, paginate */
+header,
+footer,
+section::after {
+  color: var(nord0);
+  font-size: 22px;
+  position: absolute;
+  top: auto;
+  bottom: 18px;
+  white-space: nowrap;
+}
+
+header {
+  left: 30px;
+}
+
+footer {
+  left: 600px;
+}
+
+section::after {
+  right: 30px;
+}
+
+section>p>img:not(.emoji) {
+  display: block;
+  margin: 0 auto;
+}
+
+section.image-left>p>img:not(.emoji) {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+section.image-right>p>img:not(.emoji) {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* default slide */
+section {
+  justify-content: start;
+  padding: 50px;
+  padding-top: 100px;
+  line-height: 1.2;
+}
+
+section details,
+section dl,
+section ol,
+section p,
+section pre,
+section table,
+section ul {
+  margin-bottom: 10px;
+}
+
+section>h1:first-child,
+section>h1:nth-child(2) {
+  position: absolute;
+  width: 1280px;
+  height: 75px;
+  margin: 0;
+  padding-top: 5px;
+  padding-left: 30px;
+  top: 0;
+  left: 0;
+  background-color: var(nord0);
+  color: var(nord6);
+}
+
+section>h1:first-child+*,
+section>h1:nth-child(2)+* {
+  margin-top: 0;
+}
+
+/* class: title */
+section.title {
+  border: solid 1px black;
+  padding-top: 420px;
+  text-align: center;
+}
+
+section.title>h1 {
+  position: absolute;
+  width: 1280px;
+  font-size: 72px;
+  top: auto;
+  bottom: 300px;
+  left: 0;
+  height: auto;
+  min-height: 180px;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: var(nord0);
+  color: var(nord6);
+}
+
+section.title>h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+section.title>h2+h2 {
+  margin-top: 0;
+}
+
+section.title>h2+* {
+  margin-top: 10px;
+}
+
+section.title::after,
+section.title>header,
+section.title>footer {
+  display: none;
+}
+
+/* block */
+.block:not(.footnote) {
+  background-color: var(nord4);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.block:not(.footnote)>p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.block:not(.footnote)>p:first-child {
+  padding-top: 10px;
+}
+
+.block-head {
+  padding-top: 5px !important;
+  background-color: var(nord0);
+  color: var(nord6);
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 4px;
+}
+
+.info-head {
+  background-color: var(nord10);
+}
+
+.warn-head {
+  background-color: var(nord11);
+}
+
+.footnote {
+  position: absolute;
+  bottom: 40px;
+  font-size: 0.7em;
+  color: ${nord[2]};
+}

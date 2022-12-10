@@ -1,64 +1,22 @@
-const {Marp} = require("@marp-team/marp-core");
+const { Marp } = require("@marp-team/marp-core");
 const markdownItContainer = require("markdown-it-container");
 const markdownItSup = require("markdown-it-sup");
 const markdownItSub = require("markdown-it-sub");
 
-module.exports = {
-  engine: (opts) => {
-    const marp = new Marp({
-      ...opts,
-      html: true,
-    });
+// style
+const nord = [
+  // Polar Night
+  "#2E3440", "#3B4252", "#434C5E", "#4C566A",
+  // Snow Storm
+  "#D8DEE9", "#E5E9F0", "#ECEFF4",
+  // Frost
+  "#8FBCBB", "#88C0D0", "#81A1C1", "#5E81AC",
+  // Aurora
+  "#BF616A", "#D08770", "#EBCB8B", "#A3BE8C", "#B48EAD",
+];
 
-    // plugins
-    marp.use(markdownItSup);
-    marp.use(markdownItSub);
-    /// containers
-    const addContainerBox = (marp, tagName, className, modify = x => x) => {
-      const re = new RegExp(`^${tagName}:?(.*)$`);
-      const boxClass = `block ${className === "block" ? "" : className}`;
-      const headClass = `block-head ${className === "block" ? "" : className + "-head"}`;
-      marp.use(markdownItContainer, tagName, {
-        validate: (params) => {
-          return params.trim().match(re);
-        },
-        render: (tokens, idx) => {
-          const m = tokens[idx].info.trim().match(re);
-          const name = modify(m ? m[1] : "");
-          if (tokens[idx].nesting === 1) {
-            let ret = `<div class="${boxClass}">`;
-            if(name){
-              ret += `<p class="${headClass}">${name}</p>`;
-            }
-            ret += `\n`;
-            return ret;
-          } else {
-            return `</div>\n`;
-          }
-        }
-      });
-    };
-    addContainerBox(marp, "block", "block");
-    addContainerBox(marp, "black", "block");
-    addContainerBox(marp, "info", "info", name => name || "info");
-    addContainerBox(marp, "blue", "info", name => name || "info");
-    addContainerBox(marp, "warn", "warn", name => name || "warn");
-    addContainerBox(marp, "red", "warn", name => name || "warn");
-    addContainerBox(marp, "footnote", "footnote");
-
-    // style
-    const nord = [
-      // Polar Night
-      "#2E3440", "#3B4252", "#434C5E", "#4C566A",
-      // Snow Storm
-      "#D8DEE9", "#E5E9F0", "#ECEFF4",
-      // Frost
-      "#8FBCBB", "#88C0D0", "#81A1C1", "#5E81AC",
-      // Aurora
-      "#BF616A", "#D08770", "#EBCB8B", "#A3BE8C", "#B48EAD",
-    ];
-    const theme = marp.themeSet.add(marp.themeSet.pack("default", {
-      after: `
+const theme = marp.themeSet.add(marp.themeSet.pack("default", {
+  after: `
         /* @theme nordic-beamer */
 
         /* header, footer, paginate */
@@ -188,7 +146,52 @@ module.exports = {
           color: ${nord[2]};
         }
       `,
-    }));
+}));
+
+module.exports = {
+  engine: (opts) => {
+    const marp = new Marp({
+      ...opts,
+      html: true,
+    });
+
+    // plugins
+    marp.use(markdownItSup);
+    marp.use(markdownItSub);
+    /// containers
+    const addContainerBox = (marp, tagName, className, modify = x => x) => {
+      const re = new RegExp(`^${tagName}:?(.*)$`);
+      const boxClass = `block ${className === "block" ? "" : className}`;
+      const headClass = `block-head ${className === "block" ? "" : className + "-head"}`;
+      marp.use(markdownItContainer, tagName, {
+        validate: (params) => {
+          return params.trim().match(re);
+        },
+        render: (tokens, idx) => {
+          const m = tokens[idx].info.trim().match(re);
+          const name = modify(m ? m[1] : "");
+          if (tokens[idx].nesting === 1) {
+            let ret = `<div class="${boxClass}">`;
+            if (name) {
+              ret += `<p class="${headClass}">${name}</p>`;
+            }
+            ret += `\n`;
+            return ret;
+          } else {
+            return `</div>\n`;
+          }
+        }
+      });
+    };
+
+    addContainerBox(marp, "block", "block");
+    addContainerBox(marp, "black", "block");
+    addContainerBox(marp, "info", "info", name => name || "info");
+    addContainerBox(marp, "blue", "info", name => name || "info");
+    addContainerBox(marp, "warn", "warn", name => name || "warn");
+    addContainerBox(marp, "red", "warn", name => name || "warn");
+    addContainerBox(marp, "footnote", "footnote");
+
     marp.themeSet.addTheme(theme);
     return marp;
   },
