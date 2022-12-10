@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "@marp-team/marp-core": "^1.1.1",
+    "@marp-team/marp-core": "^2.1.1",
     "markdown-it-container": "^2.0.0"
   },
-  "name": "marp-theme-nordic-beamer",
+  "name": "marp-beamer",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:n-ari/marp-theme-nordic-beamer.git",
+  "repository": "git@github.com:CUG-hydro/marp-beamer.git",
   "author": "n-ari <fukunari.r.aa@m.titech.ac.jp>",
   "license": "MIT"
 }

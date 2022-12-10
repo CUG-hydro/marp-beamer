@@ -17,9 +17,8 @@ function build_marp{
 }
 
 $ext = "html"
-$ext = "pdf"
+# $ext = "pdf"
 $options = ""
-
 # build_marp "./examples/high_level.md" "beamer_high" $options
 # build_marp "./examples/low_level.md" "beamer_low" $options
 

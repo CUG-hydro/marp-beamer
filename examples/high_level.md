@@ -1,10 +1,10 @@
 ---
 marp: true
-theme: nordic-beamer
+theme: my-theme
 paginate: true
 header: '中国地质大学'
 footer: '大气科学系'
-title: 'marp-theme-nordic-beamer demo slide'
+title: 'marp-theme-beamer demo slide'
 ---
 
 ## option2: markdown-container

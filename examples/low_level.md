@@ -1,10 +1,10 @@
 ---
 marp: true
-theme: nordic-beamer
+theme: beamer
 paginate: true
 header: '中国地质大学'
 footer: '大气科学系'
-title: 'marp-theme-nordic-beamer demo slide'
+title: 'beamer低级语法'
 ---
 
 ## option1: html语言
