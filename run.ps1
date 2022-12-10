@@ -1,9 +1,27 @@
-# $fin = "./slides/demo/index.md"
-# $fin = "./CUG-HydroMet/ch02_geop_fields.md"
-$fin = "./CUG-HydroMet/ch00_绪论.md"
-$fout = "a.pdf"
-
-
 # npx @marp-team/marp-cli --server ./slides
-marp $fin -o $fout --allow-local-files
-SumatraPDF $fout
+# SumatraPDF $fout
+
+function build_marp{
+  param (
+    $fin,
+    $fout,
+    $options = "", 
+    $verbose = 1
+  )
+  $cmd= "marp $fin -o $fout --allow-local-files --theme ./themes/beamer.css $options"
+
+  if ($verbose) {
+    Write-Output $cmd  
+  }
+  Invoke-Expression $cmd
+}
+
+$ext = "html"
+$ext = "pdf"
+$options = ""
+
+# build_marp "./examples/high_level.md" "beamer_high" $options
+# build_marp "./examples/low_level.md" "beamer_low" $options
+
+build_marp "./examples/high_level.md" "pages/beamer_high.$ext" $options
+build_marp "./examples/low_level.md" "pages/beamer_low.$ext" $options

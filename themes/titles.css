@@ -1,0 +1,117 @@
+/* header, footer, paginate */
+header,
+footer,
+section::after {
+  /* color: #2E3440; */
+  font-size: 22px;
+  position: absolute;
+  top: auto;
+  bottom: 18px;
+  white-space: nowrap;
+}
+
+section>p>img:not(.emoji) {
+  display: block;
+  margin: 0 auto;
+}
+
+section.image-left>p>img:not(.emoji) {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+section.image-right>p>img:not(.emoji) {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* header {
+  left: 30px;
+}
+
+footer {
+  left: 600px;
+} */
+
+/* section::after {
+  right: 30px;
+} */
+
+/* default slide */
+/* section {
+  justify-content: start;
+  padding: 50px;
+  padding-top: 100px;
+  line-height: 1.2;
+} */
+
+/* section details,
+section dl,
+section ol,
+section p,
+section pre,
+section table,
+section ul {
+  margin-bottom: 10px;
+} */
+
+/* section>h1:first-child,
+section>h1:nth-child(2) {
+  position: absolute;
+  width: 1280px;
+  height: 75px;
+  margin: 0;
+  padding-top: 5px;
+  padding-left: 30px;
+  top: 0;
+  left: 0;
+  background-color: #2E3440;
+  color: #ECEFF4;
+} */
+
+/* section>h1:first-child+*,
+section>h1:nth-child(2)+* {
+  margin-top: 0;
+} */
+
+/* class: title */
+/* section.title {
+  border: solid 1px black;
+  padding-top: 420px;
+  text-align: center;
+} */
+
+/* section.title>h1 {
+  position: absolute;
+  width: 1280px;
+  font-size: 72px;
+  top: auto;
+  bottom: 300px;
+  left: 0;
+  height: auto;
+  min-height: 180px;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #2E3440;
+  color: #ECEFF4;
+} */
+
+/* section.title>h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+} */
+
+/* section.title>h2+h2 {
+  margin-top: 0;
+} */
+
+/* section.title>h2+* {
+  margin-top: 10px;
+} */
+
+/* section.title::after,
+section.title>header,
+section.title>footer {
+  display: none;
+} */
