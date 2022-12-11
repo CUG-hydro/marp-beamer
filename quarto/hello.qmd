@@ -1,0 +1,88 @@
+---
+title: "Habits"
+author: "John Doe"
+format: beamer
+slide-level: 0
+---
+
+# In the morning
+
+content before the pause
+
+. . .
+
+content after the pause
+
+---
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Left column
+:::
+
+::: {.column width="60%"}
+Right column
+:::
+
+::::
+
+---
+
+
+::: {.callout-note}
+Note that there are five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+::: {.callout-tip}
+## Tip With Caption
+
+This is an example of a callout with a caption.
+:::
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+
+---
+
+## Slide Title
+
+- Green ^[A footnote]
+- Brown
+- Purple
+
+::: aside
+Some additional commentary of more peripheral interest.
+:::
+
+---
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+---
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+---
+
+## Going to sleep
+
+- Get in bed
+- Count sheep

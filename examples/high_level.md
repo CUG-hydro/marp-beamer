@@ -4,7 +4,7 @@ theme: my-theme
 paginate: true
 header: '中国地质大学'
 footer: '大气科学系'
-title: 'marp-theme-beamer demo slide'
+title: 'beamer高级语法'
 ---
 
 ## option2: markdown-container
@@ -51,8 +51,6 @@ Block only (block / black)
 :::
 
 :::footnote
-
 1. 脚注1
 2. 脚注2`markdown-it-footnote`。
-
 :::
